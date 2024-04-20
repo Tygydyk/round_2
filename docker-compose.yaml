@@ -1,0 +1,26 @@
+services:
+  flask-server-1:
+    build: ./flask_server_1
+#    ports:
+#      - "55535:55535"
+  flask-server-2:
+    build: ./flask_server_2
+#    ports: 
+#      - "55536:55536"
+  flask-server-3:
+    build: ./flask_server_3
+#    ports: 
+#      - "55537:55537"
+  ngnix-server:
+    build: ./nginx
+#    volumes:
+#       - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+#       - ./nginx/default:/etc/nginx/sites-enabled/default
+#       - ./nginx/ssl/nginx.crt:/etc/nginx/ssl/nginx.crt
+#       - ./nginx/ssl/nginx.key:/etc/nginx/ssl/nginx.key
+#       - ./nginx/hosts:/etc/hosts
+#       - ./nginx/proxy_params:/etc/nginx/proxy_params
+    restart: always
+    ports: 
+       - "5000:5000"
+    
